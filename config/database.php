@@ -5,19 +5,20 @@
  */
 
 $hostHeader = $_SERVER['HTTP_HOST'] ?? '';
+$isLocal = ($hostHeader === 'localhost' || strpos($hostHeader, '127.0.0.1') !== false || strpos($hostHeader, 'localhost:') === 0);
 
-if (strpos($hostHeader, 'infinityfree') !== false || strpos($hostHeader, 'medmock2026') !== false) {
-    // InfinityFree Production Database Credentials
-    define('DB_HOST', 'sql303.infinityfree.com');
-    define('DB_NAME', 'if0_42547635_medmock');
-    define('DB_USER', 'if0_42547635');
-    define('DB_PASS', 'Malihanaveed');
-} else {
+if ($isLocal) {
     // Local Development (XAMPP)
     define('DB_HOST', 'localhost');
     define('DB_NAME', 'medmock');
     define('DB_USER', 'root');
     define('DB_PASS', '');
+} else {
+    // InfinityFree Production Database Credentials
+    define('DB_HOST', 'sql303.infinityfree.com');
+    define('DB_NAME', 'if0_42547635_medmock');
+    define('DB_USER', 'if0_42547635');
+    define('DB_PASS', 'Malihanaveed');
 }
 
 define('DB_CHARSET', 'utf8mb4');
