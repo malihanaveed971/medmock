@@ -1,15 +1,25 @@
 <?php
 /**
  * MedMock - Database Configuration & Helpers
- * 
- * Database connection settings, PDO connection, and URL helpers.
+ * Dynamic Environment Switch (Local XAMPP vs InfinityFree Production)
  */
 
-// Database Credentials
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'medmock');
-define('DB_USER', 'root');
-define('DB_PASS', '');
+$hostHeader = $_SERVER['HTTP_HOST'] ?? '';
+
+if (strpos($hostHeader, 'infinityfree') !== false || strpos($hostHeader, 'medmock2026') !== false) {
+    // InfinityFree Production Database Credentials
+    define('DB_HOST', 'sql303.infinityfree.com');
+    define('DB_NAME', 'if0_42547635_medmock');
+    define('DB_USER', 'if0_42547635');
+    define('DB_PASS', 'Malihanaveed');
+} else {
+    // Local Development (XAMPP)
+    define('DB_HOST', 'localhost');
+    define('DB_NAME', 'medmock');
+    define('DB_USER', 'root');
+    define('DB_PASS', '');
+}
+
 define('DB_CHARSET', 'utf8mb4');
 
 // Dynamic Base URL Detection
@@ -40,7 +50,7 @@ function getConnection() {
             ];
             $pdo = new PDO($dsn, DB_USER, DB_PASS, $options);
         } catch (PDOException $e) {
-            die("Database connection failed: " . $e->getMessage());
+            die("Database Connection Failed: " . $e->getMessage());
         }
     }
 
@@ -56,6 +66,4 @@ function getConnection() {
 function url($path = '') {
     $path = ltrim($path, '/');
     return BASE_URL . '/' . $path;
-}
-
-
+}
