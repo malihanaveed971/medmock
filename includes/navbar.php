@@ -59,7 +59,7 @@ $role = $_SESSION['role'] ?? 'user';
 
                     <li class="nav-item ms-lg-3">
                         <a class="btn btn-outline-danger btn-sm fw-bold px-3 py-2" href="<?php echo url('auth/logout.php'); ?>">
-                            <i class="bi bi-box-arrow-right me-1"></i> Logout (<?php echo htmlspecialchars($_SESSION['full_name']); ?>)
+                            <i class="bi bi-box-arrow-right me-1"></i> Logout (<?php echo htmlspecialchars($_SESSION['full_name'] ?? 'User'); ?>)
                         </a>
                     </li>
 

@@ -15,7 +15,13 @@ $stmt = $conn->prepare("SELECT payment_status, test_credits, role FROM users WHE
 $stmt->execute([$user_id]);
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-if ($user['role'] === 'admin') {
+if (!$user) {
+    session_destroy();
+    header("Location: " . url("auth/login.php"));
+    exit();
+}
+
+if (($user['role'] ?? '') === 'admin') {
     header("Location: " . url("admin/dashboard.php"));
     exit();
 }
@@ -23,8 +29,8 @@ if ($user['role'] === 'admin') {
 $credits = (int)($user['test_credits'] ?? 0);
 $hasCredits = ($credits > 0);
 
-include("../includes/header.php");
-include("../includes/navbar.php");
+include __DIR__ . "/../includes/header.php";
+include __DIR__ . "/../includes/navbar.php";
 ?>
 
 <div class="container py-5">
@@ -35,7 +41,7 @@ include("../includes/navbar.php");
             <div class="p-4 p-md-5 bg-primary text-white rounded shadow d-flex justify-content-between align-items-center flex-wrap gap-3">
                 <div>
                     <h2>
-                        Welcome, <?php echo htmlspecialchars($_SESSION['full_name']); ?> 👋
+                        Welcome, <?php echo htmlspecialchars($_SESSION['full_name'] ?? 'Candidate'); ?> 👋
                     </h2>
                     <p class="mb-0 fs-5">
                         FCPS Part-II Specialized Medical Mock Examination Portal
@@ -144,4 +150,4 @@ include("../includes/navbar.php");
 
 </div>
 
-<?php include("../includes/footer.php"); ?>
+<?php include __DIR__ . "/../includes/footer.php"; ?>
