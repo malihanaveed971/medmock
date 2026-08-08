@@ -1,0 +1,70 @@
+body {
+    background: #f5f7fb;
+}
+
+.exam-header {
+    background: #0d6efd;
+    color: white;
+    padding: 15px 25px;
+}
+
+.timer-box {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.question-card {
+    background: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, .08);
+}
+
+.palette {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, .08);
+}
+
+.palette button {
+
+    width: 45px;
+
+    height: 45px;
+
+    margin: 5px;
+
+    border-radius: 8px;
+
+}
+
+.palette .current {
+
+    background: #ffc107;
+
+    color: black;
+
+}
+
+.palette .answered {
+
+    background: #198754;
+
+    color: white;
+
+}
+
+.palette .notanswered {
+
+    background: #dee2e6;
+
+}
+
+.palette .review {
+
+    background: #fd7e14;
+
+    color: white;
+
+}

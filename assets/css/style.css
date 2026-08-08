@@ -1,0 +1,286 @@
+/* ===========================================
+   MedMock - Global Styles
+   =========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
+}
+
+/* Navbar */
+
+.navbar {
+    padding: 18px 0;
+    background: #ffffff !important;
+}
+
+.navbar-brand {
+    font-size: 30px;
+    font-weight: 700;
+    color: #2563eb !important;
+}
+
+.nav-link {
+    color: #334155 !important;
+    font-weight: 500;
+    margin-left: 15px;
+}
+
+.nav-link:hover {
+    color: #2563eb !important;
+}
+
+/* Hero Section */
+
+section {
+    padding: 90px 0;
+}
+
+.display-3 {
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.lead {
+    color: #64748b;
+    font-size: 20px;
+}
+
+p {
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* Buttons */
+
+.btn-primary {
+    background: #2563eb;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: #1d4ed8;
+}
+
+.btn-outline-primary {
+    border: 2px solid #2563eb;
+    color: #2563eb;
+    padding: 14px 30px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-outline-primary:hover {
+    background: #2563eb;
+    color: white;
+}
+
+/* Image */
+
+img {
+    max-width: 100%;
+}
+
+/* Responsive */
+
+@media (max-width: 991px) {
+
+    .display-3 {
+        font-size: 42px;
+        text-align: center;
+    }
+
+    .lead,
+    p {
+        text-align: center;
+    }
+
+    .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .col-lg-6 {
+        text-align: center;
+    }
+}
+
+/* ==========================================
+   Why Choose MedMock
+========================================== */
+
+.features {
+
+    background: white;
+
+    padding: 90px 0;
+
+}
+
+.feature-card {
+
+    background: #ffffff;
+
+    border-radius: 15px;
+
+    padding: 35px;
+
+    text-align: center;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
+
+    transition: .3s;
+
+    height: 100%;
+
+}
+
+.feature-card:hover {
+
+    transform: translateY(-8px);
+
+}
+
+.feature-icon {
+
+    font-size: 55px;
+
+    margin-bottom: 20px;
+
+}
+
+.feature-card h4 {
+
+    margin-bottom: 15px;
+
+    font-weight: 600;
+
+}
+
+.feature-card p {
+
+    color: #64748b;
+
+}
+
+/* ==========================================
+   Statistics Section
+========================================== */
+
+.statistics {
+
+    background: #f8fafc;
+
+    padding: 90px 0;
+
+}
+
+.stat-card {
+
+    background: #ffffff;
+
+    border-radius: 15px;
+
+    padding: 40px 20px;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .08);
+
+    transition: .3s;
+
+}
+
+.stat-card:hover {
+
+    transform: translateY(-8px);
+
+}
+
+.stat-card h1 {
+
+    color: #2563EB;
+
+    font-size: 48px;
+
+    font-weight: 700;
+
+}
+
+.stat-card p {
+
+    margin-top: 10px;
+
+    font-size: 18px;
+
+}
+
+/* ==========================
+   How It Works
+========================== */
+
+.how-it-works {
+
+    background: #ffffff;
+
+    padding: 90px 0;
+
+}
+
+.step-card {
+
+    background: #f8fafc;
+
+    border-radius: 18px;
+
+    padding: 35px 25px;
+
+    text-align: center;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .08);
+
+    transition: .3s;
+
+    height: 100%;
+
+}
+
+.step-card:hover {
+
+    transform: translateY(-8px);
+
+}
+
+.step-number {
+
+    width: 70px;
+
+    height: 70px;
+
+    line-height: 70px;
+
+    margin: auto;
+
+    margin-bottom: 20px;
+
+    border-radius: 50%;
+
+    background: #2563EB;
+
+    color: white;
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+}

@@ -1,0 +1,13 @@
+# MedMock Git Ignore Rules
+
+# Environment & Temp Files
+*.tmp
+*.log
+.DS_Store
+Thumbs.db
+
+# Large PDF documents
+*.pdf
+
+# Vendor Dependencies (if using Composer)
+/vendor/
